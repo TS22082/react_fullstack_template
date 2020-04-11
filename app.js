@@ -12,6 +12,9 @@ if (process.env.NODE_ENV === "production") {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const apiRoutes = require("./routes/api-routes");
+app.use("/", apiRoutes);
+
 app.listen(PORT, () => {
   console.log(`listening on port: ${PORT}`);
 });
